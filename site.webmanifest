@@ -1,0 +1,11 @@
+{
+  "name": "LM Group — Грузоперевозки",
+  "short_name": "LM Group",
+  "icons": [
+    { "src": "assets/favicon-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/favicon-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0a0a0a",
+  "background_color": "#fafafa",
+  "display": "standalone"
+}

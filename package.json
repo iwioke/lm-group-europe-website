@@ -1,0 +1,17 @@
+{
+  "name": "lm-group-landing",
+  "version": "1.0.0",
+  "description": "Минималистичный одностраничный лендинг для компании грузоперевозок **LM Group** в чёрно-белой эстетике. Сделан по принципам [taste-skill](https://github.com/Leonxlnx/taste-skill): сильная типографика, воздух, ритм, монохром, тонкая моушн-анимация.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i src/input.css -o assets/styles.css --minify",
+    "watch:css": "tailwindcss -i src/input.css -o assets/styles.css --watch",
+    "deploy:zip": "npm run build:css && rm -f deploy.zip && zip -r deploy.zip index.html .htaccess robots.txt site.webmanifest assets/styles.css assets/favicon.svg assets/favicon-16x16.png assets/favicon-32x32.png assets/favicon-180x180.png assets/favicon-192x192.png assets/favicon-512x512.png assets/lm-mark.svg assets/lm-wordmark.svg assets/lm-group-logo.png assets/transport-new.mp4 assets/customs-new.mp4 assets/warehouse.mp4 assets/groupage.mp4 -x '*.DS_Store' && echo '\\n✓ deploy.zip готов — заливай на hoster.by'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
+}

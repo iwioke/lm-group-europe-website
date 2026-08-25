@@ -1,0 +1,46 @@
+# --- Gzip / Brotli compression ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/javascript application/json image/svg+xml
+</IfModule>
+
+# --- Long-term caching for static assets ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Hashed/static assets — 30 days
+  ExpiresByType text/css                 "access plus 30 days"
+  ExpiresByType image/svg+xml            "access plus 30 days"
+  ExpiresByType image/png                "access plus 30 days"
+  ExpiresByType image/jpeg               "access plus 30 days"
+  ExpiresByType image/webp               "access plus 30 days"
+  ExpiresByType video/mp4                "access plus 30 days"
+  ExpiresByType font/woff2               "access plus 30 days"
+
+  # HTML — short cache so updates propagate quickly
+  ExpiresByType text/html                "access plus 5 minutes"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # CSS and SVG: short cache with revalidation. Bumping ?v= in HTML busts immediately.
+  <FilesMatch "\.(css|svg)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+  # Heavy media that rarely changes: long cache.
+  <FilesMatch "\.(png|jpg|jpeg|webp|mp4|webm|woff2|woff|ttf|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  # HTML: no cache so deploys appear instantly.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# --- Default index ---
+DirectoryIndex index.html
+
+# --- Force HTTPS (раскомментируй после того, как hoster.by выдаст SSL-сертификат) ---
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} off
+#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>

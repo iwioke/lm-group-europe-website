@@ -1,0 +1,1597 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>LM Group — Грузоперевозки без компромиссов</title>
+<meta name="description" content="LM Group — международные и внутренние грузоперевозки. Фуры, контейнеры, спецтехника. Точно. В срок. Без лишних слов." />
+<meta name="theme-color" content="#0a0a0a" />
+<link rel="icon" href="assets/favicon-32x32.png?v=3" type="image/png" sizes="32x32" />
+<link rel="icon" href="assets/favicon-16x16.png?v=3" type="image/png" sizes="16x16" />
+<link rel="icon" href="assets/favicon.svg?v=3" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="assets/favicon-180x180.png?v=3" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="icon" href="assets/favicon-192x192.png?v=3" type="image/png" sizes="192x192" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="LM Group" />
+<meta property="og:title" content="LM Group — Грузоперевозки без компромиссов" />
+<meta property="og:description" content="Международные и внутренние грузоперевозки. Беларусь · Россия · ЕС · приграничный Китай · СНГ. Точно. В срок. Без лишних слов." />
+<meta property="og:image" content="assets/lm-group-logo.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=22">
+
+<!-- GSAP core, used by the SplitText hero animation.
+     Intentionally NOT deferred: the inline script at the end of <body> runs during parse
+     and needs window.gsap to already exist. -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+<!-- Eagerly preload all service videos so they're ready before the user scrolls or hovers. -->
+<link rel="preload" as="video" type="video/mp4" href="assets/transport-new.mp4" />
+<link rel="preload" as="video" type="video/mp4" href="assets/customs-new.mp4" />
+<link rel="preload" as="video" type="video/mp4" href="assets/warehouse.mp4" />
+<link rel="preload" as="video" type="video/mp4" href="assets/groupage.mp4" />
+</head>
+<body class="grain">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur border-b border-ink/10">
+  <div class="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-3 md:py-4 grid grid-cols-[auto_1fr_auto] menu:grid-cols-[1fr_auto_1fr] items-center gap-3 md:gap-6">
+    <a href="#top" class="flex items-center gap-2 md:gap-4 justify-self-start transition-transform duration-300 ease-out hover:scale-[1.025]" data-i18n-aria="logo.aria" aria-label="LM Group — на главную">
+      <img src="assets/lm-mark.svg" alt="" aria-hidden="true" class="h-9 md:h-16 w-auto select-none" draggable="false" />
+      <img src="assets/lm-wordmark.svg" alt="LM Group" class="h-3.5 md:h-5 w-auto select-none hidden sm:block" draggable="false" />
+    </a>
+    <nav class="hidden menu:flex gap-10 text-sm uppercase tracking-widest text-ink justify-self-center">
+      <a href="#about" class="underline-grow" data-i18n="nav.about">О компании</a>
+      <a href="#services" class="underline-grow" data-i18n="nav.services">Услуги</a>
+      <a href="#contact" class="underline-grow" data-i18n="nav.contact">Контакты</a>
+    </nav>
+    <div class="flex items-center gap-2 md:gap-4 justify-self-end md:mr-2 lg:mr-6">
+      <div class="lang-dropdown hidden menu:block">
+        <button type="button" id="lang-trigger" class="lang-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Language">
+          <span id="lang-current">RU</span>
+          <svg class="chevron" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div id="lang-menu" class="lang-menu" role="menu">
+          <button type="button" class="lang-btn" data-lang="ru" role="menuitem">Русский <span class="code">RU</span></button>
+          <button type="button" class="lang-btn" data-lang="en" role="menuitem">English <span class="code">EN</span></button>
+          <button type="button" class="lang-btn" data-lang="de" role="menuitem">Deutsch <span class="code">DE</span></button>
+          <button type="button" class="lang-btn" data-lang="kz" role="menuitem">Қазақша <span class="code">KZ</span></button>
+          <button type="button" class="lang-btn" data-lang="cn" role="menuitem">中文 <span class="code">CN</span></button>
+        </div>
+      </div>
+      <a href="#contact" data-scroll-contact class="hidden menu:inline-flex group items-center justify-center gap-1.5 md:gap-2 min-w-[6.5rem] md:min-w-[10rem] text-[11px] md:text-sm uppercase tracking-widest font-medium px-3 md:px-5 py-2 md:py-2.5 bg-[#d11f2a] text-paper border border-[#d11f2a] shadow-sm hover:bg-ink hover:border-ink hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ink/20 transition-all duration-300 ease-out">
+        <span data-i18n="nav.cta">Заявка</span> <span aria-hidden class="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1.5">→</span>
+      </a>
+      <button type="button" id="menu-toggle" class="menu:hidden flex flex-col items-end gap-1.5 p-2" aria-label="Menu" aria-expanded="false">
+        <span class="block w-6 h-0.5 bg-ink transition-all duration-300"></span>
+        <span class="block w-4 h-0.5 bg-ink transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-ink transition-all duration-300"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu Panel -->
+<div id="mobile-menu" class="fixed inset-0 z-[90] hidden menu:hidden">
+  <div id="mobile-menu-overlay" class="absolute inset-0 bg-ink/40 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+  <div id="mobile-menu-panel" class="absolute top-0 right-0 h-full w-[300px] max-w-[85vw] bg-paper shadow-2xl flex flex-col p-8 pt-20 translate-x-full transition-transform duration-300">
+    <nav class="flex flex-col gap-6">
+      <a href="#about" class="mobile-nav-link underline-grow text-2xl font-display font-bold tracking-tightest" data-i18n="nav.about">О компании</a>
+      <a href="#services" class="mobile-nav-link underline-grow text-2xl font-display font-bold tracking-tightest" data-i18n="nav.services">Услуги</a>
+      <a href="#contact" class="mobile-nav-link underline-grow text-2xl font-display font-bold tracking-tightest" data-i18n="nav.contact">Контакты</a>
+    </nav>
+    <div class="mt-8 flex flex-wrap items-center gap-2">
+      <button type="button" class="lang-pill lang-btn" data-lang="ru">RU</button>
+      <button type="button" class="lang-pill lang-btn" data-lang="en">EN</button>
+      <button type="button" class="lang-pill lang-btn" data-lang="de">DE</button>
+      <button type="button" class="lang-pill lang-btn" data-lang="kz">KZ</button>
+      <button type="button" class="lang-pill lang-btn" data-lang="cn">CN</button>
+    </div>
+    <a href="#contact" data-scroll-contact class="mobile-nav-link mt-auto inline-flex items-center justify-center gap-2 bg-[#d11f2a] text-paper px-6 py-4 text-sm uppercase tracking-widest font-medium shadow-sm hover:bg-ink hover:text-paper transition-all duration-300">
+      <span data-i18n="nav.cta">Заявка</span> <span aria-hidden>→</span>
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="top" class="relative min-h-[100svh] flex flex-col justify-between pt-28 pb-10 px-6 md:px-10 overflow-hidden bg-ink">
+  <!-- LineWaves WebGL background — white waves on the dark hero backdrop. -->
+  <div id="line-waves" class="line-waves-container line-waves-bg" aria-hidden="true"></div>
+  <!-- Scrim between the waves and the copy: the pattern is high-contrast enough that white
+       text sitting directly on it loses legibility. Sits above the canvas, below the text. -->
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="relative z-10 max-w-[1400px] mx-auto w-full flex-1 flex flex-col justify-center items-center text-center">
+    <div class="flex items-center justify-center gap-3 text-xs uppercase tracking-[0.3em] text-paper/60 reveal">
+      <span class="inline-block w-8 h-px bg-paper/60"></span>
+      <span data-i18n="hero.eyebrow">ООО «ЛМ Групп» · Минск · Грузоперевозки и складская логистика</span>
+      <span class="inline-block w-8 h-px bg-paper/60"></span>
+    </div>
+
+    <h1 id="hero-title" class="hero-line font-display font-bold mt-8 text-paper" style="font-size: clamp(44px, 8.4vw, 148px);" data-i18n-html="hero.title">
+      Ваш <span class="italic font-light">надёжный</span><br/>
+      партнёр в сфере<br/>
+      <span class="italic font-light">грузоперевозок</span><br/>
+      и складской логистики<span class="opacity-30">.</span>
+    </h1>
+
+    <p class="mt-10 max-w-2xl mx-auto text-base md:text-lg text-paper leading-relaxed reveal" data-i18n="hero.subtitle">
+      Беларусь · Россия · Европейский Союз · приграничный Китай · СНГ. Мультимодальные перевозки, ВЭД-аутсорсинг, складская логистика и сборные грузы — под ключ.
+    </p>
+  </div>
+
+  <!-- bottom strip -->
+  <div class="relative z-10 max-w-[1400px] mx-auto w-full mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-xs uppercase tracking-widest text-paper/60 reveal text-center">
+    <div><div class="text-paper text-2xl font-display font-bold">04</div><span data-i18n="hero.stat1">направления услуг</span></div>
+    <div><div class="text-paper text-2xl font-display font-bold">EU · РФ · РБ</div><span data-i18n="hero.stat2">основные маршруты</span></div>
+    <div><div class="text-paper text-2xl font-display font-bold">CN→EU</div><span data-i18n="hero.stat3">приграничный Китай</span></div>
+    <div><div class="text-paper text-2xl font-display font-bold">24/7</div><span data-i18n="hero.stat4">отдел логистики</span></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section aria-hidden="true" class="border-y border-ink/10 bg-ink text-paper overflow-hidden">
+  <div class="marquee-track flex whitespace-nowrap py-6 font-display font-bold text-3xl md:text-5xl tracking-tightest">
+    <div class="flex gap-12 pr-12">
+      <span data-i18n="marquee.1">ТРАНСПОРТНАЯ ЛОГИСТИКА</span><span>•</span><span data-i18n="marquee.2">ВЭД-АУТСОРСИНГ</span><span>•</span><span data-i18n="marquee.3">СКЛАДСКАЯ ЛОГИСТИКА</span><span>•</span><span data-i18n="marquee.4">СБОРНЫЕ ГРУЗЫ</span><span>•</span><span data-i18n="marquee.5">МУЛЬТИМОДАЛЬ</span><span>•</span><span data-i18n="marquee.6">ЧЕСТНЫЙ ЗНАК</span><span>•</span>
+    </div>
+    <div class="flex gap-12 pr-12" aria-hidden="true">
+      <span data-i18n="marquee.1">ТРАНСПОРТНАЯ ЛОГИСТИКА</span><span>•</span><span data-i18n="marquee.2">ВЭД-АУТСОРСИНГ</span><span>•</span><span data-i18n="marquee.3">СКЛАДСКАЯ ЛОГИСТИКА</span><span>•</span><span data-i18n="marquee.4">СБОРНЫЕ ГРУЗЫ</span><span>•</span><span data-i18n="marquee.5">МУЛЬТИМОДАЛЬ</span><span>•</span><span data-i18n="marquee.6">ЧЕСТНЫЙ ЗНАК</span><span>•</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="px-6 md:px-10 pt-28 md:pt-40 pb-16 md:pb-24 border-t border-ink/10">
+  <div class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-4 reveal">
+      <div class="text-xs uppercase tracking-[0.3em] text-ink/60" data-i18n="about.eyebrow">/ О компании</div>
+      <h2 id="about-title" class="font-display font-bold tracking-tightest text-5xl md:text-6xl leading-[0.95] mt-8" data-i18n-html="about.title">
+        Молодая команда —<br/>
+        <span class="italic font-light">большой опыт.</span>
+      </h2>
+    </div>
+    <div class="md:col-span-7 md:col-start-6 reveal space-y-6 text-ink/80 text-base md:text-lg leading-relaxed">
+      <p data-i18n-html="about.p1">
+        Основным направлением нашей компании является осуществление услуг в области <strong class="text-ink font-medium">грузоперевозок</strong>. Несмотря на то, что мы молодая компания, наше основное преимущество — это команда, которая состоит из специалистов с большим опытом работы в грузоперевозках, складской логистике и ВЭД.
+      </p>
+      <p data-i18n-html="about.p2">
+        Благодаря ответственному подходу к каждому партнёру и их задачам, мы заслужили доверие наших клиентов. Мы осуществляем перевозки по территориям <strong class="text-ink font-medium">Республики Беларусь, Российской Федерации, Европейского Союза и стран СНГ</strong>.
+      </p>
+      <ul class="grid grid-cols-2 gap-px bg-ink/10 border border-ink/10 mt-10">
+        <li class="bg-paper p-5"><div class="text-xs uppercase tracking-[0.25em] text-ink/50" data-i18n="about.region">Регион</div><div class="mt-2 font-display font-bold text-xl" data-i18n="about.tile1">Беларусь · РФ</div></li>
+        <li class="bg-paper p-5"><div class="text-xs uppercase tracking-[0.25em] text-ink/50" data-i18n="about.region">Регион</div><div class="mt-2 font-display font-bold text-xl" data-i18n="about.tile2">ЕС · Китай</div></li>
+        <li class="bg-paper p-5"><div class="text-xs uppercase tracking-[0.25em] text-ink/50" data-i18n="about.profile">Профиль</div><div class="mt-2 font-display font-bold text-xl" data-i18n="about.tile3">Транспорт · ВЭД</div></li>
+        <li class="bg-paper p-5"><div class="text-xs uppercase tracking-[0.25em] text-ink/50" data-i18n="about.profile">Профиль</div><div class="mt-2 font-display font-bold text-xl" data-i18n="about.tile4">Склад · Сборные</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="px-6 md:px-10 pt-16 md:pt-24 pb-28 md:pb-40">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="grid md:grid-cols-12 gap-6 mb-16 reveal">
+      <div class="md:col-span-3 text-xs uppercase tracking-[0.3em] text-ink/60" data-i18n="services.eyebrow">/ Услуги</div>
+      <h2 id="services-title" class="md:col-span-9 font-display font-bold tracking-tightest text-5xl md:text-7xl leading-[0.95]" data-i18n-html="services.title">
+        Перевозим <span class="italic font-light">всё</span>,<br/>
+        что можно <span class="italic font-light">погрузить</span>.
+      </h2>
+    </div>
+
+    <div class="services-carousel relative">
+      <div class="services-track-wrap relative -mx-6 md:mx-0">
+      <div class="services-track flex md:grid md:grid-cols-2 gap-px bg-ink/10 md:border md:border-ink/10 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none scroll-px-6 md:scroll-px-0 px-6 md:px-0">
+        <article class="services-card snap-start shrink-0 w-full md:w-auto md:shrink bg-paper hover-tilt flex flex-col">
+          <div class="overflow-hidden bg-ink aspect-[16/10] relative">
+            <video
+              class="service-video w-[105%] h-full object-cover transition-transform duration-700 ease-out"
+              style="object-position: left center;"
+              src="assets/transport-new.mp4#t=0.1"
+              muted
+              loop
+              playsinline
+              preload="auto"
+              data-speed="1.6"
+              aria-label="Магистральная фура — проигрывается при наведении"></video>
+          </div>
+          <div class="p-8 md:p-10">
+            <div class="text-xs uppercase tracking-[0.3em] text-ink/40">01</div>
+            <h3 class="font-display font-bold text-2xl md:text-3xl mt-6" data-i18n="service1.title">Транспортная логистика</h3>
+            <p class="mt-4 text-ink/70 text-sm leading-relaxed" data-i18n="service1.desc">Мультимодальные перевозки грузов из/в Европейский Союз, по территории Республики Беларусь и Российской Федерации, доставка грузов из «приграничного» Китая в РФ, РБ и ЕС.</p>
+          </div>
+        </article>
+        <article class="services-card snap-start shrink-0 w-full md:w-auto md:shrink bg-paper hover-tilt flex flex-col">
+          <div class="overflow-hidden aspect-[16/10] relative" style="background:#ffffff;">
+            <video
+              class="service-video w-full h-full object-contain transition-transform duration-700 ease-out"
+              style="background:#ffffff;object-position:center 70%;"
+              src="assets/customs-new.mp4#t=0.1"
+              muted
+              loop
+              playsinline
+              preload="auto"
+              aria-label="Контейнерный терминал — проигрывается при наведении"></video>
+          </div>
+          <div class="p-8 md:p-10">
+            <div class="text-xs uppercase tracking-[0.3em] text-ink/40">02</div>
+            <h3 class="font-display font-bold text-2xl md:text-3xl mt-6" data-i18n="service2.title">ВЭД-Аутсорсинг</h3>
+            <p class="mt-4 text-ink/70 text-sm leading-relaxed" data-i18n="service2.desc">Предоставляем полный комплекс услуг по импорту и экспорту товаров (грузов) — от документов и таможни до финальной доставки.</p>
+          </div>
+        </article>
+        <article class="services-card snap-start shrink-0 w-full md:w-auto md:shrink bg-paper hover-tilt flex flex-col">
+          <div class="overflow-hidden bg-ink aspect-[16/10] relative">
+            <video
+              class="service-video w-full h-full object-cover transition-transform duration-700 ease-out"
+              src="assets/warehouse.mp4#t=0.1"
+              muted
+              loop
+              playsinline
+              preload="auto"
+              data-speed="1.6"
+              aria-label="Складская логистика — проигрывается при наведении"></video>
+          </div>
+          <div class="p-8 md:p-10">
+            <div class="text-xs uppercase tracking-[0.3em] text-ink/40">03</div>
+            <h3 class="font-display font-bold text-2xl md:text-3xl mt-6" data-i18n="service3.title">Складская логистика</h3>
+            <p class="mt-4 text-ink/70 text-sm leading-relaxed" data-i18n="service3.desc">Маркировка товаров «Честным знаком», агрегация, ответственное хранение и комплектация заказов.</p>
+          </div>
+        </article>
+        <article class="services-card snap-start shrink-0 w-full md:w-auto md:shrink bg-paper hover-tilt flex flex-col">
+          <div class="overflow-hidden bg-ink aspect-[16/10] relative">
+            <video
+              class="service-video w-full h-full object-cover transition-transform duration-700 ease-out"
+              src="assets/groupage.mp4#t=0.1"
+              muted
+              loop
+              playsinline
+              preload="auto"
+              aria-label="Сборные грузы — проигрывается при наведении"></video>
+          </div>
+          <div class="p-8 md:p-10">
+            <div class="text-xs uppercase tracking-[0.3em] text-ink/40">04</div>
+            <h3 class="font-display font-bold text-2xl md:text-3xl mt-6" data-i18n="service4.title">Сборные грузы</h3>
+            <p class="mt-4 text-ink/70 text-sm leading-relaxed" data-i18n="service4.desc">Транспортировка и консолидация товаров на складах в Прибалтике, Польше и Республике Беларусь.</p>
+          </div>
+        </article>
+      </div>
+      </div>
+      <!-- Mobile carousel controls -->
+      <div class="md:hidden mt-6 flex items-center justify-center gap-4">
+        <button type="button" class="services-prev w-11 h-11 inline-flex items-center justify-center border border-ink/30 text-ink hover:bg-ink hover:text-paper transition-colors duration-200" aria-label="Предыдущая услуга">
+          <span aria-hidden>←</span>
+        </button>
+        <div class="services-dots flex items-center gap-2" aria-hidden="true"></div>
+        <button type="button" class="services-next w-11 h-11 inline-flex items-center justify-center border border-ink/30 text-ink hover:bg-ink hover:text-paper transition-colors duration-200" aria-label="Следующая услуга">
+          <span aria-hidden>→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS / MANIFESTO -->
+<section id="numbers" class="bg-ink text-paper px-6 md:px-10 py-28 md:py-40">
+  <div class="max-w-[1400px] mx-auto text-center">
+    <div class="reveal flex flex-col items-center">
+      <div class="text-xs uppercase tracking-[0.3em] text-paper/50" data-i18n="manifesto.eyebrow">/ Манифест</div>
+      <p id="manifesto-text" class="mt-8 max-w-4xl mx-auto font-display font-bold tracking-tightest text-3xl md:text-5xl leading-[1.1]" data-i18n-html="manifesto.text">
+        Мы не продаём «решения».<br/>
+        Мы <span class="italic font-light">довозим</span> груз —<br/>
+        целым, вовремя, по цене,<br/>
+        о которой <span class="italic font-light">договорились</span>.
+      </p>
+    </div>
+
+    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-10 border-t border-paper/15 pt-10 text-center">
+      <div class="reveal">
+        <div class="font-display font-bold text-5xl md:text-6xl tracking-tightest leading-none">EU<span class="text-paper/40"> · </span>РБ<span class="text-paper/40"> · </span>РФ</div>
+        <div class="mt-3 text-xs uppercase tracking-[0.25em] text-paper/60" data-i18n="numbers.routes">основные направления</div>
+      </div>
+      <div class="reveal">
+        <div class="font-display font-bold text-5xl md:text-6xl tracking-tightest leading-none">CN→EU</div>
+        <div class="mt-3 text-xs uppercase tracking-[0.25em] text-paper/60" data-i18n="numbers.china">приграничный Китай</div>
+      </div>
+      <div class="reveal">
+        <div class="font-display font-bold text-5xl md:text-6xl tracking-tightest leading-none">04</div>
+        <div class="mt-3 text-xs uppercase tracking-[0.25em] text-paper/60" data-i18n="numbers.services">направления услуг</div>
+      </div>
+      <div class="reveal">
+        <div class="font-display font-bold text-5xl md:text-6xl tracking-tightest leading-none">0</div>
+        <div class="mt-3 text-xs uppercase tracking-[0.25em] text-paper/60" data-i18n="numbers.hidden">скрытых платежей</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="px-6 md:px-10 py-28 md:py-40">
+  <div class="max-w-[1400px] mx-auto">
+    <div id="contact-heading" class="reveal max-w-4xl mx-auto text-center">
+      <div class="text-xs uppercase tracking-[0.3em] text-ink/60" data-i18n="cta.eyebrow">/ Заявка</div>
+      <h2 id="cta-title" class="font-display font-bold tracking-tightest text-5xl md:text-8xl leading-[0.9] mt-6" data-i18n-html="cta.title">
+        Опишите груз.<br/>
+        <span class="italic font-light">Получите цену</span><br/>
+        за 15 минут.
+      </h2>
+    </div>
+
+    <div id="contact-cards" class="mt-16 md:mt-24 grid md:grid-cols-2 gap-px bg-ink/10 border border-ink/10">
+      <!-- Foreign Trade office -->
+      <article class="bg-paper p-8 md:p-10 reveal flex flex-col">
+        <div class="flex items-baseline justify-between gap-4">
+          <div class="text-xs uppercase tracking-[0.3em] text-ink/40">01</div>
+          <div class="text-xs uppercase tracking-[0.25em] text-ink/50" data-i18n="contact.officeFE.city">Брест</div>
+        </div>
+        <h3 class="font-display font-bold text-3xl md:text-4xl tracking-tightest mt-6" data-i18n="contact.officeFE.dept">Отдел ВЭД</h3>
+        <ul class="mt-8 space-y-4 text-base flex-1">
+          <li class="flex justify-between gap-4 border-b border-ink/15 pb-3">
+            <span class="text-ink/50 text-xs uppercase tracking-widest shrink-0" data-i18n="contact.address">Адрес</span>
+            <span class="font-medium text-right" data-i18n-html="contact.officeFE.address">Брест, Варшавское шоссе&nbsp;43,<br/>оф.&nbsp;916</span>
+          </li>
+          <li class="flex justify-between gap-4 border-b border-ink/15 pb-3">
+            <span class="text-ink/50 text-xs uppercase tracking-widest shrink-0" data-i18n="contact.phone">Телефон</span>
+            <a href="tel:+375445052918" class="font-medium underline-grow text-right">+375 (44) 505-29-18</a>
+          </li>
+          <li class="flex justify-between gap-4 border-b border-ink/15 pb-3">
+            <span class="text-ink/50 text-xs uppercase tracking-widest shrink-0">Email</span>
+            <a href="mailto:salesestlmgroup@gmail.com" class="font-medium underline-grow text-right break-all">salesestlmgroup@gmail.com</a>
+          </li>
+        </ul>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="https://wa.me/375445052918" target="_blank" rel="noopener" class="group flex-1 inline-flex items-center justify-center gap-3 bg-[#d11f2a] text-paper px-6 py-4 text-sm uppercase tracking-[0.25em] font-medium shadow-sm hover:bg-ink hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ink/20 transition-all duration-300 ease-out">
+            <span data-i18n="contact.whatsapp">Написать в WhatsApp</span>
+            <span aria-hidden class="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1.5">→</span>
+          </a>
+          <a href="mailto:salesestlmgroup@gmail.com" class="group flex-1 inline-flex items-center justify-center gap-3 border border-ink/15 text-ink px-6 py-4 text-sm uppercase tracking-[0.25em] font-medium hover:bg-ink hover:text-paper hover:border-ink hover:-translate-y-0.5 transition-all duration-300 ease-out">
+            <span data-i18n="contact.email">Написать на Email</span>
+            <span aria-hidden class="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1.5">→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Logistics office -->
+      <article class="bg-paper p-8 md:p-10 reveal flex flex-col">
+        <div class="flex items-baseline justify-between gap-4">
+          <div class="text-xs uppercase tracking-[0.3em] text-ink/40">02</div>
+          <div class="text-xs uppercase tracking-[0.25em] text-ink/50" data-i18n="contact.officeLog.city">Минск</div>
+        </div>
+        <h3 class="font-display font-bold text-3xl md:text-4xl tracking-tightest mt-6" data-i18n="contact.officeLog.dept">Отдел логистики</h3>
+        <ul class="mt-8 space-y-4 text-base flex-1">
+          <li class="flex justify-between gap-4 border-b border-ink/15 pb-3">
+            <span class="text-ink/50 text-xs uppercase tracking-widest shrink-0" data-i18n="contact.address">Адрес</span>
+            <span class="font-medium text-right" data-i18n-html="contact.officeLog.address">Минск, ул. Платонова,&nbsp;1Б,<br/>пом.&nbsp;40, оф.&nbsp;113</span>
+          </li>
+          <li class="flex justify-between gap-4 border-b border-ink/15 pb-3">
+            <span class="text-ink/50 text-xs uppercase tracking-widest shrink-0" data-i18n="contact.phone">Телефон</span>
+            <a href="tel:+375445851984" class="font-medium underline-grow text-right">+375 (44) 585-19-84</a>
+          </li>
+          <li class="flex justify-between gap-4 border-b border-ink/15 pb-3">
+            <span class="text-ink/50 text-xs uppercase tracking-widest shrink-0">Email</span>
+            <a href="mailto:infoestlmgroup@gmail.com" class="font-medium underline-grow text-right break-all">infoestlmgroup@gmail.com</a>
+          </li>
+        </ul>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="https://wa.me/375445851984" target="_blank" rel="noopener" class="group flex-1 inline-flex items-center justify-center gap-3 bg-[#d11f2a] text-paper px-6 py-4 text-sm uppercase tracking-[0.25em] font-medium shadow-sm hover:bg-ink hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ink/20 transition-all duration-300 ease-out">
+            <span data-i18n="contact.whatsapp">Написать в WhatsApp</span>
+            <span aria-hidden class="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1.5">→</span>
+          </a>
+          <a href="mailto:infoestlmgroup@gmail.com" class="group flex-1 inline-flex items-center justify-center gap-3 border border-ink/15 text-ink px-6 py-4 text-sm uppercase tracking-[0.25em] font-medium hover:bg-ink hover:text-paper hover:border-ink hover:-translate-y-0.5 transition-all duration-300 ease-out">
+            <span data-i18n="contact.email">Написать на Email</span>
+            <span aria-hidden class="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1.5">→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-ink/15 px-6 md:px-10 py-10">
+  <div class="max-w-[1400px] mx-auto flex flex-col items-center justify-center gap-4 text-xs uppercase tracking-[0.25em] text-ink/60 text-center">
+    <div class="font-display font-bold text-ink text-base" data-i18n="footer.company">ООО «ЛМ ГРУПП»</div>
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="https://wa.me/375445851984" target="_blank" rel="noopener" class="underline-grow">WhatsApp</a>
+      <a href="mailto:infoestlmgroup@gmail.com" class="underline-grow">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Always open at the hero on initial page load, but never fight the user after they start scrolling.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  // Force scroll to top at every stage — some browsers override earlier calls.
+  window.scrollTo(0, 0);
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  document.addEventListener('DOMContentLoaded', () => window.scrollTo(0, 0));
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    // Mobile Safari restores scroll AFTER load — need rAF to run after it.
+    requestAnimationFrame(() => window.scrollTo(0, 0));
+    setTimeout(() => window.scrollTo(0, 0), 100);
+  });
+  window.addEventListener('pageshow', (e) => { window.scrollTo(0, 0); });
+  // Track whether the user has scrolled manually — once they do, stop fighting them.
+  let _scrollTimer = null;
+  window.addEventListener('scroll', () => {
+    window._userScrolled = true;
+    clearTimeout(_scrollTimer);
+  }, { passive: true });
+
+  // ===== i18n: RU / EN / DE =====
+  const I18N = {
+    ru: {
+      'logo.aria': 'LM Group — на главную',
+      'nav.about': 'О компании',
+      'nav.services': 'Услуги',
+      'nav.contact': 'Контакты',
+      'nav.cta': 'Заявка',
+      'hero.eyebrow': 'ООО «ЛМ Групп» · Минск · Грузоперевозки и складская логистика',
+      'hero.title': 'Ваш <span class="italic font-light">надёжный</span><br/>партнёр в сфере<br/><span class="italic font-light">грузоперевозок</span><br/>и складской логистики<span class="opacity-30">.</span>',
+      'hero.subtitle': 'Беларусь · Россия · Европейский Союз · приграничный Китай · СНГ. Мультимодальные перевозки, ВЭД-аутсорсинг, складская логистика и сборные грузы — под ключ.',
+      'hero.stat1': 'направления услуг',
+      'hero.stat2': 'основные маршруты',
+      'hero.stat3': 'приграничный Китай',
+      'hero.stat4': 'отдел логистики',
+      'marquee.1': 'ТРАНСПОРТНАЯ ЛОГИСТИКА',
+      'marquee.2': 'ВЭД-АУТСОРСИНГ',
+      'marquee.3': 'СКЛАДСКАЯ ЛОГИСТИКА',
+      'marquee.4': 'СБОРНЫЕ ГРУЗЫ',
+      'marquee.5': 'МУЛЬТИМОДАЛЬ',
+      'marquee.6': 'ЧЕСТНЫЙ ЗНАК',
+      'about.eyebrow': '/ О компании',
+      'about.title': 'Молодая команда —<br/><span class="italic font-light">большой опыт.</span>',
+      'about.p1': 'Основным направлением нашей компании является осуществление услуг в области <strong class="text-ink font-medium">грузоперевозок</strong>. Несмотря на то, что мы молодая компания, наше основное преимущество — это команда, которая состоит из специалистов с большим опытом работы в грузоперевозках, складской логистике и ВЭД.',
+      'about.p2': 'Благодаря ответственному подходу к каждому партнёру и их задачам, мы заслужили доверие наших клиентов. Мы осуществляем перевозки по территориям <strong class="text-ink font-medium">Республики Беларусь, Российской Федерации, Европейского Союза и стран СНГ</strong>.',
+      'about.region': 'Регион',
+      'about.profile': 'Профиль',
+      'about.tile1': 'Беларусь · РФ',
+      'about.tile2': 'ЕС · Китай',
+      'about.tile3': 'Транспорт · ВЭД',
+      'about.tile4': 'Склад · Сборные',
+      'services.eyebrow': '/ Услуги',
+      'services.title': 'Перевозим <span class="italic font-light">всё</span>,<br/>что можно <span class="italic font-light">погрузить</span>.',
+      'service1.title': 'Транспортная логистика',
+      'service1.desc': 'Мультимодальные перевозки грузов из/в Европейский Союз, по территории Республики Беларусь и Российской Федерации, доставка грузов из «приграничного» Китая в РФ, РБ и ЕС.',
+      'service2.title': 'ВЭД-Аутсорсинг',
+      'service2.desc': 'Предоставляем полный комплекс услуг по импорту и экспорту товаров (грузов) — от документов и таможни до финальной доставки.',
+      'service3.title': 'Складская логистика',
+      'service3.desc': 'Маркировка товаров «Честным знаком», агрегация, ответственное хранение и комплектация заказов.',
+      'service4.title': 'Сборные грузы',
+      'service4.desc': 'Транспортировка и консолидация товаров на складах в Прибалтике, Польше и Республике Беларусь.',
+      'manifesto.eyebrow': '/ Манифест',
+      'manifesto.text': 'Мы не продаём «решения».<br/>Мы <span class="italic font-light">довозим</span> груз —<br/>целым, вовремя, по цене,<br/>о которой <span class="italic font-light">договорились</span>.',
+      'numbers.routes': 'основные направления',
+      'numbers.china': 'приграничный Китай',
+      'numbers.services': 'направления услуг',
+      'numbers.hidden': 'скрытых платежей',
+      'cta.eyebrow': '/ Заявка',
+      'cta.title': 'Опишите груз.<br/><span class="italic font-light">Получите цену</span><br/>за 15 минут.',
+      'contact.logistics': 'Логистика',
+      'contact.office': 'Офис',
+      'contact.address': 'Адрес',
+      'contact.phone': 'Телефон',
+      'contact.addressValue': 'Минск, ул. Платонова, 1Б,<br/>пом. 40, оф. 113',
+      'contact.officeFE.city': 'Брест',
+      'contact.officeFE.dept': 'Отдел ВЭД',
+      'contact.officeFE.address': 'Брест, Варшавское шоссе&nbsp;43,<br/>оф.&nbsp;916',
+      'contact.officeLog.city': 'Минск',
+      'contact.officeLog.dept': 'Отдел логистики',
+      'contact.officeLog.address': 'Минск, ул. Платонова,&nbsp;1Б,<br/>пом.&nbsp;40, оф.&nbsp;113',
+      'contact.whatsapp': 'Написать в WhatsApp',
+      'contact.email': 'Написать на Email',
+      'footer.company': 'ООО «ЛМ ГРУПП»',
+      'footer.copyright': '© LM Group · Минск · Все права защищены',
+    },
+    en: {
+      'logo.aria': 'LM Group — back to home',
+      'nav.about': 'About',
+      'nav.services': 'Services',
+      'nav.contact': 'Contact',
+      'nav.cta': 'Request',
+      'hero.eyebrow': 'LM Group LLC · Minsk · Freight & warehouse logistics',
+      'hero.title': 'Your <span class="italic font-light">reliable</span><br/>partner in<br/><span class="italic font-light">freight transport</span><br/>and warehouse logistics<span class="opacity-30">.</span>',
+      'hero.subtitle': 'Belarus · Russia · European Union · border China · CIS. Multimodal transport, foreign-trade outsourcing, warehouse logistics and groupage — turnkey.',
+      'hero.stat1': 'service lines',
+      'hero.stat2': 'main routes',
+      'hero.stat3': 'border China',
+      'hero.stat4': 'logistics desk',
+      'marquee.1': 'TRANSPORT LOGISTICS',
+      'marquee.2': 'FOREIGN-TRADE OUTSOURCING',
+      'marquee.3': 'WAREHOUSE LOGISTICS',
+      'marquee.4': 'GROUPAGE',
+      'marquee.5': 'MULTIMODAL',
+      'marquee.6': 'CHESTNY ZNAK',
+      'about.eyebrow': '/ About',
+      'about.title': 'Young team —<br/><span class="italic font-light">big experience.</span>',
+      'about.p1': 'Our core focus is providing <strong class="text-ink font-medium">freight transport</strong> services. Although we are a young company, our key advantage is a team of specialists with extensive experience in freight, warehouse logistics and foreign trade.',
+      'about.p2': 'Thanks to a responsible approach to every partner and their tasks, we have earned the trust of our clients. We operate across <strong class="text-ink font-medium">Belarus, the Russian Federation, the European Union and the CIS</strong>.',
+      'about.region': 'Region',
+      'about.profile': 'Profile',
+      'about.tile1': 'Belarus · RF',
+      'about.tile2': 'EU · China',
+      'about.tile3': 'Transport · Trade',
+      'about.tile4': 'Warehouse · Groupage',
+      'services.eyebrow': '/ Services',
+      'services.title': 'We move <span class="italic font-light">anything</span><br/>that can be <span class="italic font-light">loaded</span>.',
+      'service1.title': 'Transport logistics',
+      'service1.desc': 'Multimodal cargo transport to/from the European Union, across Belarus and the Russian Federation, and delivery of goods from "border" China to RF, RB and the EU.',
+      'service2.title': 'Foreign-trade outsourcing',
+      'service2.desc': 'A full suite of import and export services for goods — from paperwork and customs through to final-mile delivery.',
+      'service3.title': 'Warehouse logistics',
+      'service3.desc': 'Goods labelling with "Chestny Znak", aggregation, custody storage and order picking.',
+      'service4.title': 'Groupage',
+      'service4.desc': 'Transport and consolidation of goods at warehouses in the Baltics, Poland and Belarus.',
+      'manifesto.eyebrow': '/ Manifesto',
+      'manifesto.text': 'We don\u2019t sell "solutions".<br/>We <span class="italic font-light">deliver</span> cargo —<br/>intact, on time, at the price<br/>we <span class="italic font-light">agreed on</span>.',
+      'numbers.routes': 'main directions',
+      'numbers.china': 'border China',
+      'numbers.services': 'service lines',
+      'numbers.hidden': 'hidden fees',
+      'cta.eyebrow': '/ Request',
+      'cta.title': 'Describe the cargo.<br/><span class="italic font-light">Get a quote</span><br/>in 15 minutes.',
+      'contact.logistics': 'Logistics',
+      'contact.office': 'Reception',
+      'contact.address': 'Address',
+      'contact.phone': 'Phone',
+      'contact.addressValue': 'Minsk, Platonova str. 1B,<br/>room 40, office 113',
+      'contact.officeFE.city': 'Brest',
+      'contact.officeFE.dept': 'Foreign Trade',
+      'contact.officeFE.address': 'Brest, Warsaw Highway&nbsp;43,<br/>office&nbsp;916',
+      'contact.officeLog.city': 'Minsk',
+      'contact.officeLog.dept': 'Logistics Department',
+      'contact.officeLog.address': 'Minsk, Platonova str.&nbsp;1B,<br/>room&nbsp;40, office&nbsp;113',
+      'contact.whatsapp': 'Message on WhatsApp',
+      'contact.email': 'Send an Email',
+      'footer.company': 'LM GROUP LLC',
+      'footer.copyright': '© LM Group · Minsk · All rights reserved',
+    },
+    de: {
+      'logo.aria': 'LM Group — zur Startseite',
+      'nav.about': 'Über uns',
+      'nav.services': 'Leistungen',
+      'nav.contact': 'Kontakt',
+      'nav.cta': 'Anfrage',
+      'hero.eyebrow': 'LM Group GmbH · Minsk · Gütertransport & Lagerlogistik',
+      'hero.title': 'Ihr <span class="italic font-light">zuverlässiger</span><br/>Partner im<br/><span class="italic font-light">Gütertransport</span><br/>und in der Lagerlogistik<span class="opacity-30">.</span>',
+      'hero.subtitle': 'Belarus · Russland · Europäische Union · Grenzregion China · GUS. Multimodale Transporte, Außenhandels-Outsourcing, Lagerlogistik und Sammelgut — schlüsselfertig.',
+      'hero.stat1': 'Leistungsbereiche',
+      'hero.stat2': 'Hauptrouten',
+      'hero.stat3': 'Grenzregion China',
+      'hero.stat4': 'Logistikabteilung',
+      'marquee.1': 'TRANSPORTLOGISTIK',
+      'marquee.2': 'AUßENHANDELS-OUTSOURCING',
+      'marquee.3': 'LAGERLOGISTIK',
+      'marquee.4': 'SAMMELGUT',
+      'marquee.5': 'MULTIMODAL',
+      'marquee.6': 'CHESTNY ZNAK',
+      'about.eyebrow': '/ Über uns',
+      'about.title': 'Junges Team —<br/><span class="italic font-light">große Erfahrung.</span>',
+      'about.p1': 'Unser Kerngeschäft ist die Erbringung von Dienstleistungen im Bereich <strong class="text-ink font-medium">Gütertransport</strong>. Auch wenn wir ein junges Unternehmen sind, ist unser zentraler Vorteil ein Team aus Spezialisten mit langjähriger Erfahrung in Transport, Lagerlogistik und Außenhandel.',
+      'about.p2': 'Dank eines verantwortungsvollen Umgangs mit jedem Partner und seinen Aufgaben haben wir das Vertrauen unserer Kunden gewonnen. Wir transportieren auf dem Gebiet von <strong class="text-ink font-medium">Belarus, der Russischen Föderation, der Europäischen Union und der GUS-Staaten</strong>.',
+      'about.region': 'Region',
+      'about.profile': 'Profil',
+      'about.tile1': 'Belarus · RF',
+      'about.tile2': 'EU · China',
+      'about.tile3': 'Transport · Außenhandel',
+      'about.tile4': 'Lager · Sammelgut',
+      'services.eyebrow': '/ Leistungen',
+      'services.title': 'Wir transportieren <span class="italic font-light">alles</span>,<br/>was sich <span class="italic font-light">verladen</span> lässt.',
+      'service1.title': 'Transportlogistik',
+      'service1.desc': 'Multimodale Gütertransporte von/in die Europäische Union, innerhalb von Belarus und der Russischen Föderation sowie Lieferungen aus dem „Grenz-China" nach RF, RB und EU.',
+      'service2.title': 'Außenhandels-Outsourcing',
+      'service2.desc': 'Wir bieten ein komplettes Leistungspaket für Import und Export von Gütern — von Dokumenten und Zoll bis zur Endzustellung.',
+      'service3.title': 'Lagerlogistik',
+      'service3.desc': 'Warenkennzeichnung mit „Chestny Znak", Aggregation, verantwortliche Lagerung und Auftragskommissionierung.',
+      'service4.title': 'Sammelguttransport',
+      'service4.desc': 'Transport und Konsolidierung von Waren in Lagern im Baltikum, in Polen und in Belarus.',
+      'manifesto.eyebrow': '/ Manifest',
+      'manifesto.text': 'Wir verkaufen keine „Lösungen".<br/>Wir <span class="italic font-light">liefern</span> Ware —<br/>unversehrt, pünktlich, zum Preis,<br/>den wir <span class="italic font-light">vereinbart</span> haben.',
+      'numbers.routes': 'Hauptrichtungen',
+      'numbers.china': 'Grenzregion China',
+      'numbers.services': 'Leistungsbereiche',
+      'numbers.hidden': 'versteckte Kosten',
+      'cta.eyebrow': '/ Anfrage',
+      'cta.title': 'Beschreiben Sie die Fracht.<br/><span class="italic font-light">Erhalten Sie ein Angebot</span><br/>in 15 Minuten.',
+      'contact.logistics': 'Logistik',
+      'contact.office': 'Zentrale',
+      'contact.address': 'Adresse',
+      'contact.phone': 'Telefon',
+      'contact.addressValue': 'Minsk, Platonova-Str. 1B,<br/>Raum 40, Büro 113',
+      'contact.officeFE.city': 'Brest',
+      'contact.officeFE.dept': 'Außenhandel',
+      'contact.officeFE.address': 'Brest, Warschauer Chaussee&nbsp;43,<br/>Büro&nbsp;916',
+      'contact.officeLog.city': 'Minsk',
+      'contact.officeLog.dept': 'Logistikabteilung',
+      'contact.officeLog.address': 'Minsk, Platonova-Str.&nbsp;1B,<br/>Raum&nbsp;40, Büro&nbsp;113',
+      'contact.whatsapp': 'Auf WhatsApp schreiben',
+      'contact.email': 'E-Mail senden',
+      'footer.company': 'LM GROUP GmbH',
+      'footer.copyright': '© LM Group · Minsk · Alle Rechte vorbehalten',
+    },
+    kz: {
+      'logo.aria': 'LM Group — басты бетке',
+      'nav.about': 'Компания туралы',
+      'nav.services': 'Қызметтер',
+      'nav.contact': 'Байланыс',
+      'nav.cta': 'Сұраныс',
+      'hero.eyebrow': 'LM Group ЖШС · Минск · Жүк тасымалдау және қойма логистикасы',
+      'hero.title': 'Сіздің <span class="italic font-light">сенімді</span><br/>серіктесіңіз<br/><span class="italic font-light">жүк тасымалдау</span><br/>және қойма логистикасы саласында<span class="opacity-30">.</span>',
+      'hero.subtitle': 'Беларусь · Ресей · Еуропа Одағы · шекаралас Қытай · ТМД. Мультимодальды тасымалдау, СЭҚ-аутсорсинг, қойма логистикасы және жинақты жүктер — кілтке дейін.',
+      'hero.stat1': 'қызмет бағыттары',
+      'hero.stat2': 'негізгі бағыттар',
+      'hero.stat3': 'шекаралас Қытай',
+      'hero.stat4': 'логистика бөлімі',
+      'marquee.1': 'ТРАНСПОРТТЫҚ ЛОГИСТИКА',
+      'marquee.2': 'СЭҚ-АУТСОРСИНГ',
+      'marquee.3': 'ҚОЙМА ЛОГИСТИКАСЫ',
+      'marquee.4': 'ЖИНАҚТЫ ЖҮКТЕР',
+      'marquee.5': 'МУЛЬТИМОДАЛЬ',
+      'marquee.6': 'ЧЕСТНЫЙ ЗНАК',
+      'about.eyebrow': '/ Компания туралы',
+      'about.title': 'Жас команда —<br/><span class="italic font-light">үлкен тәжірибе.</span>',
+      'about.p1': 'Біздің компаниямыздың негізгі бағыты <strong class="text-ink font-medium">жүк тасымалдау</strong> саласында қызметтер көрсету болып табылады. Біз жас компания болғанымен, біздің негізгі артықшылығымыз — жүк тасымалдау, қойма логистикасы және сыртқы сауда саласында үлкен тәжірибесі бар мамандардан тұратын команда.',
+      'about.p2': 'Әр серіктеске және олардың тапсырмаларына жауапкершілікпен қараудың арқасында біз клиенттеріміздің сенімінен шықтық. Біз <strong class="text-ink font-medium">Беларусь Республикасы, Ресей Федерациясы, Еуропа Одағы және ТМД елдері</strong> аумақтарында тасымалдауды жүзеге асырамыз.',
+      'about.region': 'Аймақ',
+      'about.profile': 'Профиль',
+      'about.tile1': 'Беларусь · РФ',
+      'about.tile2': 'ЕО · Қытай',
+      'about.tile3': 'Транспорт · СЭҚ',
+      'about.tile4': 'Қойма · Жинақты',
+      'services.eyebrow': '/ Қызметтер',
+      'services.title': 'Жүктелетін <span class="italic font-light">барлық</span><br/>нәрсені <span class="italic font-light">тасымалдаймыз</span>.',
+      'service1.title': 'Транспорттық логистика',
+      'service1.desc': 'Еуропа Одағына/Еуропа Одағынан, Беларусь және Ресей Федерациясы аумағында мультимодальды жүк тасымалдау, «шекаралас» Қытайдан РФ, БР және ЕО-ға жүк жеткізу.',
+      'service2.title': 'СЭҚ-аутсорсинг',
+      'service2.desc': 'Тауарларды импорт және экспорттау бойынша толық қызметтер кешені — құжаттардан және кеденнен бастап соңғы жеткізуге дейін.',
+      'service3.title': 'Қойма логистикасы',
+      'service3.desc': 'Тауарларды «Честный знак» белгісімен белгілеу, агрегация, жауапты сақтау және тапсырыстарды жинақтау.',
+      'service4.title': 'Жинақты жүктер',
+      'service4.desc': 'Балтық елдері, Польша және Беларусь қоймаларында тауарларды тасымалдау және консолидациялау.',
+      'manifesto.eyebrow': '/ Манифест',
+      'manifesto.text': 'Біз «шешімдер» сатпаймыз.<br/>Біз жүкті <span class="italic font-light">жеткіземіз</span> —<br/>бүтін, уақытында, <span class="italic font-light">келіскен</span><br/>бағамен.',
+      'numbers.routes': 'негізгі бағыттар',
+      'numbers.china': 'шекаралас Қытай',
+      'numbers.services': 'қызмет бағыттары',
+      'numbers.hidden': 'жасырын төлемдер',
+      'cta.eyebrow': '/ Сұраныс',
+      'cta.title': 'Жүкті сипаттаңыз.<br/><span class="italic font-light">Бағаны алыңыз</span><br/>15 минут ішінде.',
+      'contact.logistics': 'Логистика',
+      'contact.office': 'Кеңсе',
+      'contact.address': 'Мекенжай',
+      'contact.phone': 'Телефон',
+      'contact.addressValue': 'Минск, Платонова к-сі 1Б,<br/>40-үй, 113-оф.',
+      'contact.officeFE.city': 'Брест',
+      'contact.officeFE.dept': 'СЭҚ бөлімі',
+      'contact.officeFE.address': 'Брест, Варшава тас жолы&nbsp;43,<br/>оф.&nbsp;916',
+      'contact.officeLog.city': 'Минск',
+      'contact.officeLog.dept': 'Логистика бөлімі',
+      'contact.officeLog.address': 'Минск, Платонова к-сі&nbsp;1Б,<br/>40-үй, оф.&nbsp;113',
+      'contact.whatsapp': 'WhatsApp-қа жазу',
+      'contact.email': 'Email жіберу',
+      'footer.company': 'LM GROUP ЖШС',
+      'footer.copyright': '© LM Group · Минск · Барлық құқықтар қорғалған',
+    },
+    cn: {
+      'logo.aria': 'LM Group — 返回首页',
+      'nav.about': '关于我们',
+      'nav.services': '服务',
+      'nav.contact': '联系方式',
+      'nav.cta': '询价',
+      'hero.eyebrow': 'LM Group 有限公司 · 明斯克 · 货运与仓储物流',
+      'hero.title': '您<span class="italic font-light">可靠的</span><br/>合作伙伴<br/>在<span class="italic font-light">货运</span><br/>与仓储物流领域<span class="opacity-30">。</span>',
+      'hero.subtitle': '白俄罗斯 · 俄罗斯 · 欧盟 · 边境中国 · 独联体。多式联运、外贸外包、仓储物流及拼箱货物 — 一站式服务。',
+      'hero.stat1': '服务方向',
+      'hero.stat2': '主要路线',
+      'hero.stat3': '边境中国',
+      'hero.stat4': '物流部门',
+      'marquee.1': '运输物流',
+      'marquee.2': '外贸外包',
+      'marquee.3': '仓储物流',
+      'marquee.4': '拼箱货物',
+      'marquee.5': '多式联运',
+      'marquee.6': '诚实标志',
+      'about.eyebrow': '/ 关于我们',
+      'about.title': '年轻团队 —<br/><span class="italic font-light">丰富经验。</span>',
+      'about.p1': '我们的核心业务是提供<strong class="text-ink font-medium">货运</strong>服务。虽然我们是一家年轻的公司，但我们的主要优势是拥有一支在货运、仓储物流和外贸领域具有丰富经验的专家团队。',
+      'about.p2': '凭借对每位合作伙伴及其任务的负责态度，我们赢得了客户的信任。我们在<strong class="text-ink font-medium">白俄罗斯共和国、俄罗斯联邦、欧盟和独联体国家</strong>境内开展运输业务。',
+      'about.region': '地区',
+      'about.profile': '概况',
+      'about.tile1': '白俄罗斯 · 俄联邦',
+      'about.tile2': '欧盟 · 中国',
+      'about.tile3': '运输 · 外贸',
+      'about.tile4': '仓储 · 拼箱',
+      'services.eyebrow': '/ 服务',
+      'services.title': '我们运输<span class="italic font-light">一切</span>，<br/>只要能<span class="italic font-light">装载</span>的。',
+      'service1.title': '运输物流',
+      'service1.desc': '往返欧盟、白俄罗斯和俄罗斯联邦境内的多式联运货运，以及从"边境"中国到俄联邦、白俄罗斯和欧盟的货物配送。',
+      'service2.title': '外贸外包',
+      'service2.desc': '提供货物进出口全套服务 — 从文件和清关到最终配送。',
+      'service3.title': '仓储物流',
+      'service3.desc': '使用"诚实标志"进行商品标记、聚合、责任保管和订单拣选。',
+      'service4.title': '拼箱货物',
+      'service4.desc': '在波罗的海国家、波兰和白俄罗斯仓库进行货物运输和集拼。',
+      'manifesto.eyebrow': '/ 宣言',
+      'manifesto.text': '我们不卖"解决方案"。<br/>我们<span class="italic font-light">送达</span>货物 —<br/>完好、准时、按我们<br/><span class="italic font-light">约定的</span>价格。',
+      'numbers.routes': '主要方向',
+      'numbers.china': '边境中国',
+      'numbers.services': '服务方向',
+      'numbers.hidden': '隐藏费用',
+      'cta.eyebrow': '/ 询价',
+      'cta.title': '描述货物。<br/><span class="italic font-light">15分钟内</span><br/>获取报价。',
+      'contact.logistics': '物流',
+      'contact.office': '办公室',
+      'contact.address': '地址',
+      'contact.phone': '电话',
+      'contact.addressValue': '明斯克, 普拉托诺娃街 1B,<br/>40号楼, 113室',
+      'contact.officeFE.city': '布列斯特',
+      'contact.officeFE.dept': '外贸部',
+      'contact.officeFE.address': '布列斯特, 华沙公路&nbsp;43,<br/>916室',
+      'contact.officeLog.city': '明斯克',
+      'contact.officeLog.dept': '物流部',
+      'contact.officeLog.address': '明斯克, 普拉托诺娃街&nbsp;1B,<br/>40号楼, 113室',
+      'contact.whatsapp': '在 WhatsApp 上联系',
+      'contact.email': '发送电子邮件',
+      'footer.company': 'LM GROUP 有限公司',
+      'footer.copyright': '© LM Group · 明斯克 · 版权所有',
+    },
+  };
+
+  // ===== SplitText — vanilla port of the React Bits <SplitText /> component =====
+  // Same behaviour as the original (per-character stagger, animate once on scroll-in),
+  // minus React/GSAP-SplitText-plugin. We only need core GSAP because we do the splitting
+  // ourselves — which also lets us keep the hero's nested <span class="italic"> and <br/>
+  // markup intact, and re-run cleanly after i18n swaps the innerHTML.
+
+  // Wraps every character in .split-char, grouped into unbreakable .split-word spans.
+  // Walks text nodes only, so existing element children are preserved in place.
+  const splitIntoChars = (root) => {
+    const wrapTextNode = (textNode) => {
+      const frag = document.createDocumentFragment();
+      // Split on whitespace but keep it, so lines still break between words.
+      textNode.textContent.split(/(\s+)/).forEach(part => {
+        if (!part) return;
+        if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+        const word = document.createElement('span');
+        word.className = 'split-word';
+        for (const ch of part) {
+          const c = document.createElement('span');
+          c.className = 'split-char';
+          c.textContent = ch;
+          word.appendChild(c);
+        }
+        frag.appendChild(word);
+      });
+      textNode.replaceWith(frag);
+    };
+    const walk = (node) => {
+      // Snapshot childNodes first — wrapTextNode mutates the live list as we iterate.
+      [...node.childNodes].forEach(child => {
+        if (child.nodeType === Node.TEXT_NODE) {
+          if (child.textContent.trim()) wrapTextNode(child);
+        } else if (child.nodeType === Node.ELEMENT_NODE && child.tagName !== 'BR') {
+          walk(child);
+        }
+      });
+    };
+    walk(root);
+    return root.querySelectorAll('.split-char');
+  };
+
+  // Props mirror the React component: delay (ms between chars), duration (s), ease,
+  // splitType ('chars' | 'words'), from/to, threshold, rootMargin, onComplete.
+  const splitTextReveal = (el, {
+    delay = 50,
+    duration = 1.25,
+    ease = 'power3.out',
+    splitType = 'chars',
+    from = { opacity: 0, y: 40 },
+    to = { opacity: 1, y: 0 },
+    threshold = 0.1,
+    rootMargin = '-100px',
+    onComplete,
+  } = {}) => {
+    if (!el) return;
+    // GSAP blocked, or the user prefers reduced motion → leave the text fully visible.
+    if (!window.gsap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // Tear down a previous run (language switch) before re-splitting.
+    if (el._splitObserver) { el._splitObserver.disconnect(); el._splitObserver = null; }
+    if (el._splitTween) { el._splitTween.kill(); el._splitTween = null; }
+    // Cache the pristine markup before anything can defer, so a second call that lands while
+    // we are waiting on fonts still restores the un-split text rather than wrapped chars.
+    if (el._splitSource == null) el._splitSource = el.innerHTML;
+
+    // The webfont is loaded with `display=swap`, so the first paint uses fallback metrics.
+    // Splitting now would freeze every character into an inline-block box sized for the
+    // fallback; when Space Grotesk swaps in, the wider glyphs overflow those boxes and the
+    // headline looks clipped until the next reflow. Wait for the real metrics first.
+    // Each call takes a ticket so a language switch mid-wait cancels the earlier one.
+    const ticket = (el._splitRun || 0) + 1;
+    el._splitRun = ticket;
+    if (document.fonts && document.fonts.status !== 'loaded') {
+      document.fonts.ready.then(() => { if (el._splitRun === ticket) build(); }).catch(build);
+      return;
+    }
+    build();
+
+    function build() {
+    el.innerHTML = el._splitSource;
+
+    const chars = splitIntoChars(el);
+    const targets = splitType.includes('chars') ? chars : el.querySelectorAll('.split-word');
+    if (!targets.length) return;
+
+    gsap.set(targets, { ...from });
+
+    const run = () => {
+      el._splitTween = gsap.to(targets, {
+        ...to,
+        duration,
+        ease,
+        stagger: delay / 1000,
+        // Deliberately no `will-change`. It promotes every char to its own compositing layer,
+        // and that layer rasterizes at the box bounds — which clips the overhang of italic
+        // glyphs. Clearing the hint afterwards releases the layers but does not force a
+        // repaint, so the clipped raster stayed on screen until some unrelated event (a
+        // hover) invalidated the area. GSAP animates transform/opacity fine without it.
+        onComplete: () => {
+          // Transforms are left in place at their final value; clear them so the characters
+          // go back to being plain static text once the reveal is done.
+          gsap.set(targets, { clearProps: 'transform' });
+          if (typeof onComplete === 'function') onComplete();
+        },
+      });
+    };
+
+    // Stands in for the component's ScrollTrigger { once: true }.
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        obs.disconnect();
+        el._splitObserver = null;
+        run();
+      });
+    }, { threshold, rootMargin });
+    io.observe(el);
+    el._splitObserver = io;
+    }
+  };
+
+  // The hero headline. y is in em so the travel scales with the clamp()ed font size
+  // instead of being a fixed 40px against a 148px cap.
+  const revealHeroTitle = () => splitTextReveal(document.getElementById('hero-title'), {
+    delay: 18,
+    duration: 0.9,
+    ease: 'power3.out',
+    splitType: 'chars',
+    from: { opacity: 0, y: '0.4em' },
+    to: { opacity: 1, y: '0em' },
+    threshold: 0.1,
+    rootMargin: '0px',
+  });
+
+  const revealSectionTitles = () => {
+    ['about-title', 'services-title', 'manifesto-text', 'cta-title'].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (el._splitSource != null) el.innerHTML = el._splitSource;
+      const chars = splitIntoChars(el);
+      chars.forEach((c, i) => c.style.setProperty('--i', i));
+    });
+  };
+
+  const HTML_LANG = { kz: 'kk', cn: 'zh' };
+
+  const setLang = (lang) => {
+    if (!I18N[lang]) lang = 'ru';
+    const dict = I18N[lang];
+    document.documentElement.lang = HTML_LANG[lang] || lang;
+    try { localStorage.setItem('lang', lang); } catch (_) {}
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const v = dict[el.dataset.i18n];
+      if (v != null) el.textContent = v;
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const v = dict[el.dataset.i18nHtml];
+      if (v == null) return;
+      el.innerHTML = v;
+      // This is now the pristine markup for the new language; drop the cached copy of the
+      // old one so splitTextReveal() doesn't restore the previous language's text.
+      el._splitSource = v;
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const v = dict[el.dataset.i18nAria];
+      if (v != null) el.setAttribute('aria-label', v);
+    });
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    const langCurrent = document.getElementById('lang-current');
+    if (langCurrent) langCurrent.textContent = lang.toUpperCase();
+
+    // The hero title's markup was just replaced, so re-split and replay the animation.
+    revealHeroTitle();
+  };
+
+  // initial language: stored choice → browser language → ru
+  const stored = (()=>{ try { return localStorage.getItem('lang'); } catch(_){ return null; } })();
+  // Browsers report Kazakh as 'kk' and Chinese as 'zh'; this site keys them as 'kz'/'cn'.
+  const BROWSER_LANG = { kk: 'kz', zh: 'cn' };
+  const rawBrowser = (navigator.language || 'ru').slice(0,2).toLowerCase();
+  const browser = BROWSER_LANG[rawBrowser] || rawBrowser;
+  const initial = I18N[stored] ? stored : (I18N[browser] ? browser : 'ru');
+  setLang(initial);
+  revealSectionTitles();
+
+  // Language dropdown (desktop)
+  const langTrigger = document.getElementById('lang-trigger');
+  const langMenu = document.getElementById('lang-menu');
+  const closeLangMenu = () => {
+    if (!langMenu) return;
+    langMenu.classList.remove('open');
+    if (langTrigger) langTrigger.setAttribute('aria-expanded', 'false');
+  };
+  if (langTrigger && langMenu) {
+    langTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = langMenu.classList.toggle('open');
+      langTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    document.addEventListener('click', (e) => {
+      if (!langMenu.classList.contains('open')) return;
+      if (!langMenu.contains(e.target) && !langTrigger.contains(e.target)) closeLangMenu();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && langMenu.classList.contains('open')) closeLangMenu();
+    });
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.addEventListener('click', () => { setLang(b.dataset.lang); revealSectionTitles(); closeLangMenu(); });
+  });
+
+  // Mobile menu
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileOverlay = document.getElementById('mobile-menu-overlay');
+  const mobilePanel = document.getElementById('mobile-menu-panel');
+  if (menuToggle && mobileMenu) {
+    const openMenu = () => {
+      mobileMenu.classList.remove('hidden');
+      menuToggle.classList.add('open');
+      mobileMenu.classList.add('open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => {
+        mobileOverlay.classList.remove('opacity-0');
+        mobilePanel.classList.remove('translate-x-full');
+      });
+    };
+    const closeMenu = () => {
+      mobileOverlay.classList.add('opacity-0');
+      mobilePanel.classList.add('translate-x-full');
+      mobileMenu.classList.remove('open');
+      menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+    };
+    menuToggle.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('open')) closeMenu(); else openMenu();
+    });
+    mobileOverlay.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+    });
+    // The panel is display:none above the `menu` breakpoint. Without this, resizing while the
+    // menu is open would hide it but leave body overflow locked, freezing page scroll.
+    window.addEventListener('resize', () => {
+      if (mobileMenu.classList.contains('open') && window.innerWidth >= 1150) closeMenu();
+    }, { passive: true });
+  }
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // "Заявка" CTA: scroll far enough that the red WhatsApp buttons are on screen,
+  // not just the section heading (which is what a plain #contact anchor lands on).
+  const scrollToContactCards = () => {
+    const cards = document.getElementById('contact-cards');
+    if (!cards) return false;
+    const heading = document.getElementById('contact-heading');
+    const header = document.querySelector('header');
+    const headerH = header ? header.getBoundingClientRect().height : 0;
+    const margin = 24;
+    const vh = window.innerHeight;
+
+    const cardsRect = cards.getBoundingClientRect();
+    const cardsBottom = cardsRect.bottom + window.scrollY;
+    const blockTop = ((heading || cards).getBoundingClientRect().top) + window.scrollY;
+
+    // Highest position we can stop at while keeping the red WhatsApp buttons on screen.
+    const buttonsVisible = cardsBottom + margin - vh;
+    // Position that puts the "Заявка" heading right under the sticky header.
+    const headingVisible = blockTop - headerH - margin;
+
+    // Prefer showing the heading too; fall back to the buttons when both can't fit.
+    const target = Math.max(headingVisible, buttonsVisible);
+
+    window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+    return true;
+  };
+
+  document.querySelectorAll('[data-scroll-contact]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      // Reveal the section immediately so we measure real heights, not pre-animation ones.
+      document.querySelectorAll('#contact-heading, #contact-cards .reveal').forEach(r => r.classList.add('in'));
+      if (scrollToContactCards()) e.preventDefault();
+    });
+  });
+
+  // Force first frame to render the moment the video has decodable data,
+  // so cards are never blank — even before the user scrolls or hovers.
+  // _userPlaying is set true the instant the user (hover/tap/carousel) wants the video to play.
+  // The async pause from this function MUST respect that flag and bail out, otherwise we'd
+  // pause a video the user just started, killing the hover animation.
+  //
+  // Once we have a frame, we capture it to a canvas and assign it back as the video's `poster`.
+  // The poster is what the <video> element renders when it has no decoded frame in memory —
+  // which happens after the browser drops it (e.g. when the tab is backgrounded). With a real
+  // poster set, the card never goes black: the captured first frame shows immediately.
+  const capturePoster = (v)=>{
+    if(v._posterCaptured) return;
+    if(!v.videoWidth || !v.videoHeight) return;
+    try {
+      const canvas = document.createElement('canvas');
+      canvas.width = v.videoWidth;
+      canvas.height = v.videoHeight;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(v, 0, 0, canvas.width, canvas.height);
+      const dataUrl = canvas.toDataURL('image/jpeg', 0.72);
+      if(dataUrl && dataUrl.length > 32){
+        v.poster = dataUrl;
+        v._posterCaptured = true;
+      }
+    } catch(_){ /* tainted canvas / cross-origin — ignore */ }
+  };
+  const paintFirstFrame = (v)=>{
+    if(v._userPlaying) return;
+    try { v.currentTime = 0.05; } catch(_){}
+    const p = v.play();
+    if(p && typeof p.then === 'function'){
+      p.then(()=>{
+        // Wait one frame so the decoder has actually presented the picture before we sample it.
+        requestAnimationFrame(()=>{
+          capturePoster(v);
+          if(v._userPlaying) return;
+          v.pause();
+          v.currentTime = 0.05;
+        });
+      }).catch(()=>{});
+    }
+  };
+  document.querySelectorAll('.service-video').forEach(v=>{
+    if(v.readyState >= 2) paintFirstFrame(v);
+    else {
+      v.addEventListener('loadeddata', ()=>paintFirstFrame(v), { once:true });
+      v.addEventListener('canplay',    ()=>paintFirstFrame(v), { once:true });
+    }
+  });
+
+  // play forward on hover; smoothly rewind to start on leave
+  // Each card's controls are stored so the carousel can drive them on mobile.
+  const cardControls = new Map();
+  document.querySelectorAll('.service-video').forEach(v=>{
+    const card = v.closest('article') || v.parentElement;
+    const speed = parseFloat(v.dataset.speed) || 1;
+    v.playbackRate = speed;
+    v.addEventListener('loadedmetadata', ()=>{ v.playbackRate = speed; });
+    let rewindRAF = null;
+    let lastTs = 0;
+    const REWIND_RATE = 1.4 * speed; // rewind proportionally faster for sped-up clips
+
+    const cancelRewind = ()=>{
+      if(rewindRAF){ cancelAnimationFrame(rewindRAF); rewindRAF = null; }
+    };
+    const start = ()=>{
+      v._userPlaying = true;
+      cancelRewind();
+      v.play().catch(()=>{});
+    };
+    // Rewind target matches the timestamp used by paintFirstFrame / capturePoster (0.05s)
+    // so the resting frame visually equals the captured poster — no flash, no mismatch.
+    const REST_TIME = 0.05;
+    const rewind = (ts)=>{
+      if(!lastTs) lastTs = ts;
+      const dt = (ts - lastTs) / 1000;
+      lastTs = ts;
+      const next = v.currentTime - dt * REWIND_RATE;
+      if(next <= REST_TIME){
+        v.currentTime = REST_TIME;
+        rewindRAF = null;
+        return;
+      }
+      v.currentTime = next;
+      rewindRAF = requestAnimationFrame(rewind);
+    };
+    const stop = ()=>{
+      v._userPlaying = false;
+      v.pause();
+      cancelRewind();
+      lastTs = 0;
+      if(v.currentTime > REST_TIME) rewindRAF = requestAnimationFrame(rewind);
+    };
+
+    cardControls.set(card, { start, stop });
+
+    card.addEventListener('mouseenter', start);
+    card.addEventListener('mouseleave', stop);
+    card.addEventListener('focusin', start);
+    card.addEventListener('focusout', stop);
+    // touch devices: tap to toggle
+    card.addEventListener('touchstart', ()=>{ v.paused ? start() : stop(); }, {passive:true});
+  });
+
+  // ===== Mobile services carousel =====
+  (function initServicesCarousel(){
+    const track = document.querySelector('.services-track');
+    const prevBtn = document.querySelector('.services-prev');
+    const nextBtn = document.querySelector('.services-next');
+    const dotsBox = document.querySelector('.services-dots');
+    if(!track || !prevBtn || !nextBtn || !dotsBox) return;
+
+    const cards = Array.from(track.querySelectorAll('.services-card'));
+    if(!cards.length) return;
+
+    // Build dot indicators
+    cards.forEach((_, i)=>{
+      const d = document.createElement('span');
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      dotsBox.appendChild(d);
+    });
+    const dots = Array.from(dotsBox.children);
+
+    const cardWidth = ()=> cards[0].getBoundingClientRect().width;
+    const currentIndex = ()=> Math.round(track.scrollLeft / cardWidth());
+
+    const goTo = (i)=>{
+      const idx = Math.max(0, Math.min(cards.length - 1, i));
+      track.scrollTo({ left: idx * cardWidth(), behavior: 'smooth' });
+    };
+
+    // Auto-play the active card's video on mobile, pause the others.
+    const mq = window.matchMedia('(max-width: 767px)');
+    let lastActive = -1;
+    const setActiveCard = (i)=>{
+      if(!mq.matches) return;
+      const idx = Math.max(0, Math.min(cards.length - 1, i));
+      if(idx === lastActive) return;
+      cards.forEach((c, j)=>{
+        const ctl = cardControls.get(c);
+        if(!ctl) return;
+        if(j === idx) ctl.start();
+        else ctl.stop();
+      });
+      lastActive = idx;
+    };
+
+    prevBtn.addEventListener('click', ()=>{
+      const t = currentIndex() - 1;
+      goTo(t);
+      setActiveCard(t);
+    });
+    nextBtn.addEventListener('click', ()=>{
+      const t = currentIndex() + 1;
+      goTo(t);
+      setActiveCard(t);
+    });
+
+    // Sync dots, button-disabled state, and active video on scroll
+    let raf = null;
+    track.addEventListener('scroll', ()=>{
+      if(raf) return;
+      raf = requestAnimationFrame(()=>{
+        raf = null;
+        const i = currentIndex();
+        dots.forEach((d, idx)=> d.classList.toggle('active', idx === i));
+        prevBtn.disabled = i === 0;
+        nextBtn.disabled = i === cards.length - 1;
+        prevBtn.classList.toggle('opacity-30', i === 0);
+        nextBtn.classList.toggle('opacity-30', i === cards.length - 1);
+        setActiveCard(i);
+      });
+    }, { passive: true });
+
+    // Initial state
+    prevBtn.classList.add('opacity-30');
+    // Kick off the first card's video on mobile once videos have decodable data
+    const kickoff = ()=> setActiveCard(0);
+    if(document.readyState === 'complete') setTimeout(kickoff, 100);
+    else window.addEventListener('load', ()=> setTimeout(kickoff, 100), { once:true });
+
+    // When switching between mobile and desktop layouts, sync video state
+    const onLayoutChange = (e)=>{
+      if(e.matches){
+        setActiveCard(currentIndex());
+      } else {
+        // Desktop: stop all auto-played videos so hover-driven behavior takes over cleanly
+        cards.forEach(c=>{ const ctl = cardControls.get(c); if(ctl) ctl.stop(); });
+        lastActive = -1;
+      }
+    };
+    if(mq.addEventListener) mq.addEventListener('change', onLayoutChange);
+    else if(mq.addListener) mq.addListener(onLayoutChange);
+  })();
+
+  // ===== Seamless marquee via RAF (pixel-perfect, no visible seam, always cyclic) =====
+  (function initMarquee(){
+    const track = document.querySelector('.marquee-track');
+    if(!track) return;
+    const firstCopy = track.firstElementChild;
+    if(!firstCopy) return;
+
+    // Disable any CSS animation; we drive transforms manually for guaranteed seamless wrap.
+    track.style.animation = 'none';
+
+    // Ensure the track contains enough copies so it stays cyclic on any screen.
+    // Even on narrow phones, we want at least 2× viewport width of content after the first copy.
+    const ensureCopies = ()=>{
+      const viewport = window.innerWidth || document.documentElement.clientWidth;
+      const target = Math.max(viewport * 2.5, firstCopy.offsetWidth * 2);
+      let safety = 0;
+      while(track.scrollWidth < target && safety < 12){
+        const clone = firstCopy.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+        safety++;
+      }
+    };
+    ensureCopies();
+    if(document.fonts && document.fonts.ready){
+      document.fonts.ready.then(ensureCopies).catch(()=>{});
+    }
+    window.addEventListener('resize', ensureCopies, { passive: true });
+
+    const speed = 90; // px/sec
+    let offset = 0;
+    let last = performance.now();
+
+    const step = (now)=>{
+      const dt = Math.min((now - last) / 1000, 0.1); // clamp dt so background tabs don't jump
+      last = now;
+      const w = firstCopy.offsetWidth; // width of one full copy in integer pixels
+      if(w > 0){
+        offset -= speed * dt;
+        // wrap by exactly one copy's width — no rounding error, no visible seam
+        while(offset <= -w) offset += w;
+        track.style.transform = `translate3d(${offset.toFixed(2)}px, 0, 0)`;
+      }
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame((t)=>{ last = t; step(t); });
+  })();
+
+  // when tab becomes visible again, force videos to redraw their first frame
+  // (browsers may drop the decoded frame in background tabs, leaving a blank canvas)
+  const refreshFrame = (v)=>{
+    if(!v.paused || v._userPlaying) return;
+    // briefly play & pause so the decoder pushes a fresh frame to screen
+    const t = v.currentTime;
+    v.play().then(()=>{
+      if(v._userPlaying) return;
+      v.pause();
+      v.currentTime = t;
+    }).catch(()=>{
+      // fallback: nudge currentTime
+      v.currentTime = t + 0.001;
+    });
+  };
+  document.addEventListener('visibilitychange', ()=>{
+    if(!document.hidden){
+      document.querySelectorAll('.service-video').forEach(refreshFrame);
+    }
+  });
+</script>
+
+<!-- ===== LineWaves — vanilla port of the React Bits <LineWaves /> component =====
+     type="module" so we can import ogl straight from the CDN. Module scripts are deferred,
+     so #line-waves is already in the DOM when this runs.
+     The vertex/fragment shaders and all uniform wiring are copied verbatim from the original. -->
+<script type="module">
+import { Renderer, Program, Mesh, Triangle } from 'https://cdn.jsdelivr.net/npm/ogl@1.0.11/+esm';
+
+const hexToVec3 = (hex) => {
+  const h = hex.replace('#', '');
+  return [
+    parseInt(h.slice(0, 2), 16) / 255,
+    parseInt(h.slice(2, 4), 16) / 255,
+    parseInt(h.slice(4, 6), 16) / 255,
+  ];
+};
+
+const vertexShader = `
+attribute vec2 uv;
+attribute vec2 position;
+varying vec2 vUv;
+void main() {
+  vUv = uv;
+  gl_Position = vec4(position, 0, 1);
+}
+`;
+
+const fragmentShader = `
+precision highp float;
+
+uniform float uTime;
+uniform vec3 uResolution;
+uniform float uSpeed;
+uniform float uInnerLines;
+uniform float uOuterLines;
+uniform float uWarpIntensity;
+uniform float uRotation;
+uniform float uEdgeFadeWidth;
+uniform float uColorCycleSpeed;
+uniform float uBrightness;
+uniform vec3 uColor1;
+uniform vec3 uColor2;
+uniform vec3 uColor3;
+uniform vec2 uMouse;
+uniform float uMouseInfluence;
+uniform bool uEnableMouse;
+uniform bool uInvert;
+uniform vec3 uInkColor;
+
+#define HALF_PI 1.5707963
+
+float hashF(float n) {
+  return fract(sin(n * 127.1) * 43758.5453123);
+}
+
+float smoothNoise(float x) {
+  float i = floor(x);
+  float f = fract(x);
+  float u = f * f * (3.0 - 2.0 * f);
+  return mix(hashF(i), hashF(i + 1.0), u);
+}
+
+float displaceA(float coord, float t) {
+  float result = sin(coord * 2.123) * 0.2;
+  result += sin(coord * 3.234 + t * 4.345) * 0.1;
+  result += sin(coord * 0.589 + t * 0.934) * 0.5;
+  return result;
+}
+
+float displaceB(float coord, float t) {
+  float result = sin(coord * 1.345) * 0.3;
+  result += sin(coord * 2.734 + t * 3.345) * 0.2;
+  result += sin(coord * 0.189 + t * 0.934) * 0.3;
+  return result;
+}
+
+vec2 rotate2D(vec2 p, float angle) {
+  float c = cos(angle);
+  float s = sin(angle);
+  return vec2(p.x * c - p.y * s, p.x * s + p.y * c);
+}
+
+void main() {
+  vec2 coords = gl_FragCoord.xy / uResolution.xy;
+  coords = coords * 2.0 - 1.0;
+  coords = rotate2D(coords, uRotation);
+
+  float halfT = uTime * uSpeed * 0.5;
+  float fullT = uTime * uSpeed;
+
+  float mouseWarp = 0.0;
+  if (uEnableMouse) {
+    vec2 mPos = rotate2D(uMouse * 2.0 - 1.0, uRotation);
+    float mDist = length(coords - mPos);
+    mouseWarp = uMouseInfluence * exp(-mDist * mDist * 4.0);
+  }
+
+  float warpAx = coords.x + displaceA(coords.y, halfT) * uWarpIntensity + mouseWarp;
+  float warpAy = coords.y - displaceA(coords.x * cos(fullT) * 1.235, halfT) * uWarpIntensity;
+  float warpBx = coords.x + displaceB(coords.y, halfT) * uWarpIntensity + mouseWarp;
+  float warpBy = coords.y - displaceB(coords.x * sin(fullT) * 1.235, halfT) * uWarpIntensity;
+
+  vec2 fieldA = vec2(warpAx, warpAy);
+  vec2 fieldB = vec2(warpBx, warpBy);
+  vec2 blended = mix(fieldA, fieldB, mix(fieldA, fieldB, 0.5));
+
+  float fadeTop = smoothstep(uEdgeFadeWidth, uEdgeFadeWidth + 0.4, blended.y);
+  float fadeBottom = smoothstep(-uEdgeFadeWidth, -(uEdgeFadeWidth + 0.4), blended.y);
+  float vMask = 1.0 - max(fadeTop, fadeBottom);
+
+  float tileCount = mix(uOuterLines, uInnerLines, vMask);
+  float scaledY = blended.y * tileCount;
+  float nY = smoothNoise(abs(scaledY));
+
+  float ridge = pow(
+    step(abs(nY - blended.x) * 2.0, HALF_PI) * cos(2.0 * (nY - blended.x)),
+    5.0
+  );
+
+  float lines = 0.0;
+  for (float i = 1.0; i < 3.0; i += 1.0) {
+    lines += pow(max(fract(scaledY), fract(-scaledY)), i * 2.0);
+  }
+
+  float pattern = vMask * lines;
+
+  float cycleT = fullT * uColorCycleSpeed;
+  float rChannel = (pattern + lines * ridge) * (cos(blended.y + cycleT * 0.234) * 0.5 + 1.0);
+  float gChannel = (pattern + vMask * ridge) * (sin(blended.x + cycleT * 1.745) * 0.5 + 1.0);
+  float bChannel = (pattern + lines * ridge) * (cos(blended.x + cycleT * 0.534) * 0.5 + 1.0);
+
+  vec3 col = (rChannel * uColor1 + gChannel * uColor2 + bChannel * uColor3) * uBrightness;
+  float alpha = clamp(length(col), 0.0, 1.0);
+
+  if (uInvert) {
+    // Dark-on-light mode. We cannot just pass a black colour in via uColor1..3: alpha is
+    // derived from the colour's own magnitude, so a dark colour collapses alpha to ~0 and
+    // the whole pattern disappears. Instead keep computing the pattern with white channels
+    // and reuse its luminance purely as a coverage mask for a flat ink colour.
+    gl_FragColor = vec4(uInkColor, alpha);
+  } else {
+    gl_FragColor = vec4(col, alpha);
+  }
+}
+`;
+
+function initLineWaves(container, {
+  speed = 0.3,
+  innerLineCount = 32.0,
+  outerLineCount = 36.0,
+  warpIntensity = 1.0,
+  rotation = -45,
+  edgeFadeWidth = 0.0,
+  colorCycleSpeed = 1.0,
+  brightness = 0.2,
+  color1 = '#ffffff',
+  color2 = '#ffffff',
+  color3 = '#ffffff',
+  enableMouseInteraction = true,
+  mouseInfluence = 2.0,
+  invert = false,
+  inkColor = '#0a0a0a',
+} = {}) {
+  if (!container) return;
+
+  const renderer = new Renderer({
+    alpha: true,
+    premultipliedAlpha: false,
+    // Not in the original, which leaves dpr at 1. Without this the diagonal lines
+    // alias badly on retina displays.
+    dpr: Math.min(window.devicePixelRatio || 1, 2),
+  });
+  const gl = renderer.gl;
+  gl.clearColor(0, 0, 0, 0);
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const useMouse = enableMouseInteraction && !reduceMotion;
+
+  let currentMouse = [0.5, 0.5];
+  let targetMouse = [0.5, 0.5];
+
+  const program = new Program(gl, {
+    vertex: vertexShader,
+    fragment: fragmentShader,
+    uniforms: {
+      uTime: { value: 0 },
+      uResolution: { value: [gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height] },
+      uSpeed: { value: speed },
+      uInnerLines: { value: innerLineCount },
+      uOuterLines: { value: outerLineCount },
+      uWarpIntensity: { value: warpIntensity },
+      uRotation: { value: (rotation * Math.PI) / 180 },
+      uEdgeFadeWidth: { value: edgeFadeWidth },
+      uColorCycleSpeed: { value: colorCycleSpeed },
+      uBrightness: { value: brightness },
+      uColor1: { value: hexToVec3(color1) },
+      uColor2: { value: hexToVec3(color2) },
+      uColor3: { value: hexToVec3(color3) },
+      uMouse: { value: new Float32Array([0.5, 0.5]) },
+      uMouseInfluence: { value: mouseInfluence },
+      uEnableMouse: { value: useMouse },
+      uInvert: { value: invert },
+      uInkColor: { value: hexToVec3(inkColor) },
+    },
+  });
+
+  const mesh = new Mesh(gl, { geometry: new Triangle(gl), program });
+  container.appendChild(gl.canvas);
+
+  const resize = () => {
+    renderer.setSize(container.offsetWidth, container.offsetHeight);
+    program.uniforms.uResolution.value = [
+      gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height,
+    ];
+  };
+  window.addEventListener('resize', resize, { passive: true });
+  resize();
+
+  // The original binds mousemove to the canvas. Here the canvas is a background sitting
+  // behind the section's text and its wrapper is pointer-events:none, so canvas events would
+  // never fire. Bind to the host section instead and map coords onto the canvas rect.
+  const host = container.parentElement || container;
+  const onMouseMove = (e) => {
+    const rect = gl.canvas.getBoundingClientRect();
+    targetMouse = [
+      (e.clientX - rect.left) / rect.width,
+      1.0 - (e.clientY - rect.top) / rect.height,
+    ];
+  };
+  const onMouseLeave = () => { targetMouse = [0.5, 0.5]; };
+  if (useMouse) {
+    host.addEventListener('mousemove', onMouseMove, { passive: true });
+    host.addEventListener('mouseleave', onMouseLeave, { passive: true });
+  }
+
+  const renderFrame = (timeMs) => {
+    program.uniforms.uTime.value = timeMs * 0.001;
+    if (useMouse) {
+      currentMouse[0] += 0.05 * (targetMouse[0] - currentMouse[0]);
+      currentMouse[1] += 0.05 * (targetMouse[1] - currentMouse[1]);
+      program.uniforms.uMouse.value[0] = currentMouse[0];
+      program.uniforms.uMouse.value[1] = currentMouse[1];
+    } else {
+      program.uniforms.uMouse.value[0] = 0.5;
+      program.uniforms.uMouse.value[1] = 0.5;
+    }
+    renderer.render({ scene: mesh });
+  };
+
+  // Reduced motion → one static frame, no animation loop at all.
+  if (reduceMotion) {
+    renderFrame(0);
+    return;
+  }
+
+  // The original runs its rAF loop forever. Only render while the section is actually on
+  // screen and the tab is visible — a full-screen fragment shader is not cheap.
+  let rafId = null;
+  let onScreen = false;
+  const loop = (t) => { rafId = requestAnimationFrame(loop); renderFrame(t); };
+  const start = () => { if (rafId == null) rafId = requestAnimationFrame(loop); };
+  const stop = () => { if (rafId != null) { cancelAnimationFrame(rafId); rafId = null; } };
+
+  new IntersectionObserver(([entry]) => {
+    onScreen = entry.isIntersecting;
+    onScreen && !document.hidden ? start() : stop();
+  }, { threshold: 0 }).observe(container);
+
+  document.addEventListener('visibilitychange', () => {
+    onScreen && !document.hidden ? start() : stop();
+  });
+}
+
+initLineWaves(document.getElementById('line-waves'), {
+  speed: 0.3,
+  innerLineCount: 32,
+  outerLineCount: 36,
+  warpIntensity: 1.0,
+  rotation: -45,
+  edgeFadeWidth: 0.0,
+  colorCycleSpeed: 1.0,
+  brightness: 0.2,
+  color1: '#ffffff',
+  color2: '#ffffff',
+  color3: '#ffffff',
+  enableMouseInteraction: true,
+  mouseInfluence: 2.0,
+  invert: false,
+  inkColor: '#0a0a0a',
+});
+</script>
+</body>
+</html>
