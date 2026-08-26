@@ -40,20 +40,16 @@ The site is designed to communicate reliability and scale while keeping the path
 - OGL / WebGL
 - Space Grotesk
 
+## Live site
+
+**https://llclmgroup.com**
+
 ## Local development
 
 ```bash
 npm install
-npm run build:css
-python3 -m http.server 5173
-```
-
-Open `http://localhost:5173` in your browser.
-
-For CSS development with automatic rebuilding:
-
-```bash
-npm run watch:css
+npm run watch:css   # Tailwind в режиме watch
+npx serve .         # или любой статический сервер
 ```
 
 ## Production build
